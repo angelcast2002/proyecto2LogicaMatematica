@@ -53,12 +53,19 @@ def main():
     # El and es una coma que no esta seguido por letras (variables)
     # El or es una coma que esta seguido por letras (variables)
     # Los parentesis se representan como llaves
-    formula = "{{q, p, !p}}"
+    ejemplo1 = "{{q, p, !p}}"
+    ejemplo2 = "{{p, q, !p}, {p, q, !q}, {p, q, !p, !q}}"
+    ejemplo3 = "{{p, q, !p}, {p, q, !q}, {p, q, !p, !q}, {p, q, !p, !q, r}, {p, q, !p, !q, !r}}"
+    ejemplo4 = "{{r}, {!q, !r}, {!p, q, !r}, {q}}"
+    
+    formula = ejemplo4
     
     variables = obtener_variables(formula)
     
     combinaciones = list(product([1, 0], repeat=len(variables)))
     
+    print(variables)
+    print(len(combinaciones))
     print(combinaciones)
     
     mensaje = "La formula no es satisfactible" , []
